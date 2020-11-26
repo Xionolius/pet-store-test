@@ -7,7 +7,6 @@ pipeline {
             steps {
                 bat "newman run Pet_Store.postman_collection.json -e Pet_Store_Live.postman_environment.json -r htmlextra --reporter-htmlextra-export ./${currentBuild.number}/report.html"
 
-                success {
                   // publish html
                   publishHTML target: [
                       allowMissing: false,
@@ -17,7 +16,6 @@ pipeline {
                       reportFiles: '*.html',
                       reportName: 'Test Report'
                     ]
-                }
             }
         }
     }

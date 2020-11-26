@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Smoke Test') {
             steps {
-                sh "npm --version"
+                npm --version
             }
         }
     }

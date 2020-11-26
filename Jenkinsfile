@@ -1,5 +1,5 @@
 #!groovy
-
+def buildNumber = ${currentBuild.number}
 pipeline {
     agent any
     stages {
@@ -14,7 +14,7 @@ pipeline {
                       allowMissing: false,
                       alwaysLinkToLastBuild: false,
                       keepAll: true,
-                      reportDir: ${currentBuild.number},
+                      reportDir: '${buildNumber}',
                       reportFiles: '*.html',
                       reportName: 'Test Report'
                     ]

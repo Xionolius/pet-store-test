@@ -14,7 +14,7 @@ pipeline {
                       allowMissing: false,
                       alwaysLinkToLastBuild: false,
                       keepAll: true,
-                      reportDir: '${currentBuild.number}',
+                      reportDir: ${currentBuild.number},
                       reportFiles: '*.html',
                       reportName: 'Test Report'
                     ]
